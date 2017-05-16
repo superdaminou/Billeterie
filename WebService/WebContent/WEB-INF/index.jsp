@@ -7,9 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Billeterie</title>
 </head>
-<body>
+<body> 
 
- <jsp:useBean id="personne"  scope="request" class= "billeterie.Personne" />
+ <jsp:useBean id="personne"  scope="request" class= "billeterie.User" />
  	<h1>YOLO</h1>
 	<form action="#" method="POST" >
 		<label for="prenom">Prenom</label>

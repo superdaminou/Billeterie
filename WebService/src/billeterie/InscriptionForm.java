@@ -18,7 +18,7 @@ public class InscriptionForm {
 		user.setPrenom(prenom);
 		user.setNom(nom);
 		
-		InscriptionService.InscrireUser(user);
+		InscriptionService.InscireUser(user);
 		
 	}
 	
