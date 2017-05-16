@@ -16,8 +16,6 @@ public class User{
 	
 	private boolean admin;
 	
-	
-
 
 	public String getNom() {
 		return nom;
@@ -66,6 +64,10 @@ public class User{
 
 	public void setAdmin(boolean admin) {
 		this.admin = admin;
+	}
+	
+	public boolean equals(User user){
+		return this.equals(user);
 	}
 
 }

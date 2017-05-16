@@ -1,8 +1,8 @@
 package billeterie;
 
-public class InscriptionService {
+public interface InscriptionService {
 	
-	public void InscireUser(User user){
+	public static void InscireUser(User user){
 		try{
 			if(!checkInscription(user)){
 				
@@ -11,17 +11,16 @@ public class InscriptionService {
 				throw new InvalideUserException("tout les champs ne sont pas remplis");
 			}
 		}catch (InvalideUserException e){
-			
 		}
 		
 		
 	}
 	
-	public boolean test(){
+	public static boolean test(){
 		return true;
 	}
 	
-	public boolean checkInscription(User user){
+	static boolean checkInscription(User user){
 		return (user.getMail()!=null || user.getNom()!=null || user.getPrenom()!=null);
 	}
 
