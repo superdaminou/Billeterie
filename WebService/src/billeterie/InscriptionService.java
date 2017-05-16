@@ -3,12 +3,19 @@ package billeterie;
 public class InscriptionService {
 	
 	public void InscireUser(User user){
-		if(!checkInscription(user)){
+		try{
+			if(!checkInscription(user)){
+				
+			}
+			else{
+				throw new InvalideUserException("tout les champs ne sont pas remplis");
+			}
+		}catch (InvalideUserException e){
 			
 		}
 		
+		
 	}
-	
 	
 	public boolean test(){
 		return true;
