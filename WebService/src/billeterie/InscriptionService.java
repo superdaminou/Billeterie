@@ -2,17 +2,17 @@ package billeterie;
 
 public interface InscriptionService {
 	
-	public static void InscireUser(User user){
+	public static User InscireUser(User user){
 		try{
-			if(!checkInscription(user)){
-				
+			if(checkInscription(user)){
+				return user;
 			}
 			else{
 				throw new InvalideUserException("tout les champs ne sont pas remplis");
 			}
 		}catch (InvalideUserException e){
 		}
-		
+		return null;
 		
 	}
 	
@@ -21,7 +21,7 @@ public interface InscriptionService {
 	}
 	
 	static boolean checkInscription(User user){
-		return (user.getMail()!=null || user.getNom()!=null || user.getPrenom()!=null);
+		return (user.getNom()!=null && user.getPrenom()!=null);
 	}
 
 }

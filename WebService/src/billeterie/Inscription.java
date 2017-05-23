@@ -25,10 +25,9 @@ public class Inscription extends HttpServlet{
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		InscriptionForm form = new InscriptionForm();
 		Collection<User> set = new HashSet<User>();
-		
-		
-		
-		
+		form.inscrire(request);
+		set.addAll(form.getListUser());
+		System.out.println(set);
 		this.getServletContext().getRequestDispatcher(vue).forward(request, response);
 	}
 
