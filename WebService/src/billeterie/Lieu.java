@@ -9,7 +9,7 @@ public class Lieu {
 	
 	private String adresse;
 	
-	private String nomt;
+	private String nom;
 	
 	private int codePostal;
 	
