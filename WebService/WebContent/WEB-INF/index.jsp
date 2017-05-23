@@ -15,14 +15,8 @@
 </head>
 <body> 
 
- 	<h1>Consultation Evenement</h1>
-	<form action="#" method="POST" >
-		<label for="prenom">Prenom</label>
-		<input type="text" id="prenom" name="prenom" value="" size=20 maxlength =60/>
-		<label for="nom">Nom</label>
-		<input type="text" id="nom" name="nom" value="" size=20 maxlength =60/>
-		<input type="submit" value="Inscription" />
-	</form>
+ <h1>Consultation Evenement</h1>
+ 	
  	
  <form class="form-inline" action="#" method="POST">
   <div class="form-group">
