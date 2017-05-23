@@ -29,7 +29,7 @@
 
       <header class="row">
         <div class="col-md-12">
-          <h1>Ma réservation</h1>
+          <h1>Ma fréservation</h1>
         </div>
       </header>
      </div>
