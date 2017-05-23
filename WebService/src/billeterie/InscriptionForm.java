@@ -22,6 +22,9 @@ public class InscriptionForm {
 	}
 
 
+	/**
+	 * @param request
+	 */
 	public void inscrire(HttpServletRequest request){
 		String nom = getValeur(request, CHAMP_NOM);
 		String prenom = getValeur(request, CHAMP_PRENOM);
@@ -36,6 +39,11 @@ public class InscriptionForm {
 	}
 	
 	
+	/**
+	 * @param request
+	 * @param champ
+	 * @return
+	 */
 	private static String getValeur(HttpServletRequest request, String champ){
 		String valeur = request.getParameter(champ);
 		if(valeur=="" || valeur==null)
