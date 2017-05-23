@@ -2,23 +2,9 @@ package billeterie;
 
 import java.util.Date;
 
-/**
- * @author Nicolas
- *
- */
-/**
- * @author Nicolas
- *
- */
-/**
- * @author Nicolas
- *
- */
+
 public class Evenement {
 	
-	/**
-	 * 
-	 */
 	public Evenement(){
 		
 	}
