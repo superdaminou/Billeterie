@@ -16,6 +16,11 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(propOrder={"idEvenement","user", "nbPlace", })
 public class Reservation extends HttpServlet {
 	
+	public Reservation()
+	{
+		
+	}
+	
 	@XmlAttribute(name="idEvenement")
 	private int idEvenement;
 	
@@ -24,6 +29,8 @@ public class Reservation extends HttpServlet {
 	
 	@XmlAttribute(name="nbPlace")
 	private int nbPlace; 
+	
+	
 	
 	private static final long serialVersionUID = 1L;
 	public static final String res="/WEB-INF/reservation.jsp";
