@@ -1,18 +1,31 @@
 package billeterie;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlRootElement(name="User")
+@XmlType(propOrder={"id","nom", "prenom", "mail" })
 public class User{
 	
 	public User(){
 		
 	}
 	
+	@XmlAttribute(name="id")
+	private int ID;
+	
+	@XmlAttribute(name="nom")
 	private String nom;
 	
+	@XmlAttribute(name="prenom")
 	private String prenom;
 	
+	@XmlAttribute(name="mail")
 	private String mail;
 	
-	private int ID;
+
+	
 	
 	private boolean admin;
 	
