@@ -52,5 +52,50 @@ public class Reservation extends HttpServlet {
 		this.getServletContext().getRequestDispatcher(res).forward(request, response);
 	}
 
+	/**
+	 * @return the idEvenement
+	 */
+	public int getIdEvenement() {
+		return idEvenement;
+	}
+
+	/**
+	 * @param idEvenement the idEvenement to set
+	 */
+	public void setIdEvenement(int idEvenement) {
+		this.idEvenement = idEvenement;
+	}
+
+	/**
+	 * @return the user
+	 */
+	public User getUser() {
+		return user;
+	}
+
+	/**
+	 * @param user the user to set
+	 */
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	/**
+	 * @return the nbPlace
+	 */
+	public int getNbPlace() {
+		return nbPlace;
+	}
+
+	/**
+	 * @param nbPlace the nbPlace to set
+	 */
+	public void setNbPlace(int nbPlace) {
+		this.nbPlace = nbPlace;
+	}
+
+
+
+
 
 }
