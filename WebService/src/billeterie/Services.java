@@ -39,11 +39,7 @@ public class Services {
 		Evenement event = new Evenement();
 		return event ;
 	}
-	
-	public boolean ajouterEvent(Evenement event)
-	{
-		return true;
-	}
+
 	
 	
 	
