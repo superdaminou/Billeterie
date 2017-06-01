@@ -3,11 +3,17 @@ package billeterie;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
+import javax.jws.soap.SOAPBinding.Style;
+
 import jaxb.Evenement;
 import jaxb.EvenementJaxb;
 
 
-
+@WebService
+@SOAPBinding(style=Style.RPC) 
 public class ServiceEvenement {
 
 	
@@ -19,6 +25,7 @@ public class ServiceEvenement {
 	 * @param event
 	 * @return
 	 */
+	@WebMethod
 	public boolean addEvent(Evenement event)
 	{
 		EvenementJaxb ejb = new EvenementJaxb();
@@ -31,6 +38,7 @@ public class ServiceEvenement {
 	 * @param idEventASuppr
 	 * @return
 	 */
+	@WebMethod
 	public boolean deleteEvent(int idEventASuppr)
 	{
 		return true;
@@ -41,6 +49,7 @@ public class ServiceEvenement {
 	 * @param idEventAModifier
 	 * @return
 	 */
+	@WebMethod
 	public boolean modifyEvent(Evenement newEvent, int idEventAModifier)
 	{
 		EvenementJaxb ejb = new EvenementJaxb();
@@ -50,6 +59,7 @@ public class ServiceEvenement {
 	/**
 	 * @return
 	 */
+	@WebMethod
 	public List<Evenement> getAllEvents()
 	{
 		List<Evenement> liste = new ArrayList<Evenement>();
@@ -60,6 +70,7 @@ public class ServiceEvenement {
 	 * @param idEvent
 	 * @return
 	 */
+	@WebMethod
 	public Evenement getEvent(int idEvent)
 	{
 		

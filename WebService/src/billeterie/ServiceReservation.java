@@ -3,7 +3,14 @@ package billeterie;
 import jaxb.Evenement;
 import jaxb.Reservation;
 import jaxb.User;
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
+import javax.jws.soap.SOAPBinding.Style;
 
+
+@WebService
+@SOAPBinding(style=Style.RPC)
 public class ServiceReservation {
 
 	
@@ -13,6 +20,7 @@ public class ServiceReservation {
 	 * @param user
 	 * @return
 	 */
+	@WebMethod
 	public boolean doReservation(Reservation reservation, int  idevent, User user)
 	{
 		//On récupère l'évènement avec JAXB
