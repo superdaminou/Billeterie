@@ -4,9 +4,9 @@ import java.util.Set;
 
 import jaxb.Evenement;
 
-public class AcceuilForm {
+public class AccueilForm {
 	
-	public AcceuilForm(){
+	public AccueilForm(){
 		
 	}
 	
