@@ -33,6 +33,7 @@ public class EvenementJaxb {
 		
 			JAXBContext contextObj = JAXBContext.newInstance(Evenement.class);
 			Unmarshaller uns = contextObj.createUnmarshaller();
+			
 			event = (Evenement) uns.unmarshal(new File("data/"+nomFichier+".xml"));
 				System.out.println("Evenement Informations");
 				System.out.println("id: "+event.getId());
