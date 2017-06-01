@@ -53,6 +53,11 @@
  	</c:forEach>
 </div>
 
+
+<div> <form class="form-inline" action="#" method="POST"><button type="submit" name="btnCrea" value ="1" class="btn btn-default">Creation Evenement</button></form>
+
+
+
 </body>
 
 </html>
