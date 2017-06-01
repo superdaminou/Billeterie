@@ -1,13 +1,16 @@
 package demo;
 
+import billeterie.Lieu;
 import jaxb.*;
 
 public class Main {
 	public static void main(String[] args) {
 		EvenementJaxb obj = new EvenementJaxb();
-		Evenement event = new Evenement("A001", "BOOBA", "Zenit", 10122017);
-		obj.marshall(Evenement.class,event);
-		obj.unmarshall(Evenement.class,event);
+		Lieu lieu = new Lieu();
+		Evenement event = new Evenement();
+				//new Evenement(001,130, "BOOBA",lieu, "description","10/12/2017", 25);
+		obj.marshall(event);
+		obj.unmarshall(event);
 		
 	}
 
