@@ -7,6 +7,13 @@ import java.io.*;
 
 public class EvenementJaxb {
 	
+	
+	
+	
+	public EvenementJaxb() {
+
+	}
+
 	public void marshall(Evenement event) {
 		try {
 			String nomFichier = Evenement.class.toString().substring(11);

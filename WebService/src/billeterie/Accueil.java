@@ -43,9 +43,9 @@ public class Accueil extends HttpServlet{
 				if(request.getParameter("btnResa")!= null)
 				{
 					
-				InscriptionForm form = new InscriptionForm();
-				form.inscrire(request);
-				System.out.println(set.toString());
+				//InscriptionForm form = new InscriptionForm();
+				//form.inscrire(request);
+				//System.out.println(set.toString());
 				
 				request.setAttribute("set", set);
 				this.getServletContext().getRequestDispatcher(vue).forward(request, response);
