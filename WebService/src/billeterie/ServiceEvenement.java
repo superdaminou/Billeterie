@@ -4,18 +4,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jaxb.Evenement;
+import jaxb.EvenementJaxb;
 
 
 
 public class ServiceEvenement {
 
 	
+	public ServiceEvenement() {
+
+	}
+
 	/**
 	 * @param event
 	 * @return
 	 */
 	public boolean addEvent(Evenement event)
 	{
+		EvenementJaxb ejb = new EvenementJaxb();
+		ejb.marshall(event);
+		
 		return true;
 	}
 	
@@ -35,6 +43,7 @@ public class ServiceEvenement {
 	 */
 	public boolean modifyEvent(Evenement newEvent, int idEventAModifier)
 	{
+		EvenementJaxb ejb = new EvenementJaxb();
 		return true;
 	}
 

@@ -1,17 +1,24 @@
 package demo;
 
+import java.util.Date;
+
 import billeterie.Lieu;
+import billeterie.ServiceEvenement;
 import jaxb.*;
 
 public class Main {
 	public static void main(String[] args) {
 		EvenementJaxb obj = new EvenementJaxb();
 		Lieu lieu = new Lieu();
-		Evenement event = new Evenement();
-				//new Evenement(001,130, "BOOBA",lieu, "description","10/12/2017", 25);
-		obj.marshall(event);
-		obj.unmarshall(event);
+		Date date = new Date();
+		Evenement event = new Evenement(130, "BOOBA",lieu, "description",date, 25);
+
 		
+		
+		ServiceEvenement servEvent = new ServiceEvenement();
+		servEvent.addEvent(event);
+
+		obj.unmarshall(event);
 	}
 
 }
