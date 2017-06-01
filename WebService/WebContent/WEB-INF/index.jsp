@@ -27,7 +27,7 @@
     <label for="exampleInputName2">Prenom</label>
     <input type="text" class="form-control" name="prenom" id="prenom" placeholder="Prenom">
   </div>
-  <button type="submit" class="btn btn-default">Reservation</button>
+  <button type="submit" name="btnResa" value ="1"  class="btn btn-default">Reservation</button>
 </form>
 
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
