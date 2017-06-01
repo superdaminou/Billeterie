@@ -2,39 +2,37 @@ package billeterie;
 
 import java.util.Date;
 
-/**
- * @author Nicolas
- *
- */
-/**
- * @author Nicolas
- *
- */
-/**
- * @author Nicolas
- *
- */
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlRootElement(name="evenement")
+@XmlType(propOrder={"id","nbplace", "nom", "lieu",  "description", "date", "prix"})
 public class Evenement {
 	
-	/**
-	 * 
-	 */
 	public Evenement(){
 		
 	}
 	
-	private int nbPlace;
-	
-	private String nom;
-	
-	private Lieu lieu;
-	
+	@XmlAttribute(name="id")
 	private int id;
 	
+	@XmlAttribute(name="nbplace")
+	private int nbPlace;
+	
+	@XmlAttribute(name="nom")
+	private String nom;
+	
+	@XmlAttribute(name="lieu")
+	private Lieu lieu;
+		
+	@XmlAttribute(name="description")
 	private String Decription;
 	
+	@XmlAttribute(name="date")
 	private  Date date;
 	
+	@XmlAttribute(name="prix")
 	private int prix;
 
 	/**

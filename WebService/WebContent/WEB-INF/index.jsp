@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<title>Consultation</title>
 <!-- Latest compiled and minified CSS -->
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <!-- Optional theme -->
@@ -15,14 +15,8 @@
 </head>
 <body> 
 
- 	<h1>Consultation Evenement</h1>
-	<form action="#" method="POST" >
-		<label for="prenom">Prenom</label>
-		<input type="text" id="prenom" name="prenom" value="" size=20 maxlength =60/>
-		<label for="nom">Nom</label>
-		<input type="text" id="nom" name="nom" value="" size=20 maxlength =60/>
-		<input type="submit" value="Inscription" />
-	</form>
+ <h1>Consultation Evenement</h1>
+ 	
  	
  <form class="form-inline" action="#" method="POST">
   <div class="form-group">
@@ -36,11 +30,28 @@
   <button type="submit" class="btn btn-default">Reservation</button>
 </form>
 
-
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
  	<c:forEach var="personne" items= "${set}">
- 		${personne.getNom()}, ${personne.getPrenom()}<br>
+ 	
+ 	<div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Evenement
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+      ${personne.getNom()}, ${personne.getPrenom()}</p>
+		<form action="${pageContext.request.contextPath}/Acceuil" method="post">		
+		<button value="Reserver" class="btn btn-default" stype="submit" >Reserver</button>
+		</form>
+      </div>
+    </div>
+  </div>
  	</c:forEach>
-
+</div>
 
 </body>
 

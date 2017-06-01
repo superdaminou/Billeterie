@@ -11,6 +11,8 @@ public class Lieu {
 	
 	private String nom;
 	
+	private int codePostal;
+	
 	private String Ville;
 	
 	private int ID;
@@ -45,6 +47,14 @@ public class Lieu {
 
 	public void setID(int iD) {
 		ID = iD;
+	}
+
+	public int getCodePostal() {
+		return codePostal;
+	}
+
+	public void setCodePostal(int codePostal) {
+		this.codePostal = codePostal;
 	}
 	
 	
