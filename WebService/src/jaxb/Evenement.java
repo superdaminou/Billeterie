@@ -3,43 +3,57 @@ package jaxb;
 import java.util.Date;
 
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 import billeterie.Lieu;
 
 @XmlRootElement(name="evenement")
-@XmlType(propOrder={"id","nbplace", "nom", "lieu",  "description", "date", "prix"})
+
 public class Evenement {
 	
+
+	
+	
+	
+	private int id;
+	
+	private int nbPlace;
+	
+	private String nom;
+	
+	private Lieu lieu;
+		
+	private String decription;
+	
+	private  Date date;
+	
+	private int prix;
+
+	
+	
+	
+	
+	public Evenement( int nbPlace, String nom, Lieu lieu, String decription, Date date, int prix) {
+
+		this.nbPlace = nbPlace;
+		this.nom = nom;
+		this.lieu = lieu;
+		this.decription = decription;
+		this.date = date;
+		this.prix = prix;
+		this.id=10;
+	}
+
 	public Evenement(){
 		
 	}
 	
-	@XmlAttribute(name="id")
-	private int id;
-	
-	@XmlAttribute(name="nbplace")
-	private int nbPlace;
-	
-	@XmlAttribute(name="nom")
-	private String nom;
-	
-	@XmlAttribute(name="lieu")
-	private Lieu lieu;
-		
-	@XmlAttribute(name="description")
-	private String Decription;
-	
-	@XmlAttribute(name="date")
-	private  Date date;
-	
-	@XmlAttribute(name="prix")
-	private int prix;
-
 	/**
 	 * @return
 	 */
+	@XmlElement
 	public int getNbPlace() {
 		return nbPlace;
 	}
@@ -54,6 +68,7 @@ public class Evenement {
 	/**
 	 * @return
 	 */
+	@XmlElement
 	public String getNom() {
 		return nom;
 	}
@@ -68,6 +83,7 @@ public class Evenement {
 	/**
 	 * @return
 	 */
+	@XmlElement
 	public Lieu getLieu() {
 		return lieu;
 	}
@@ -82,6 +98,7 @@ public class Evenement {
 	/**
 	 * @return
 	 */
+	@XmlElement
 	public int getId() {
 		return id;
 	}
@@ -96,20 +113,22 @@ public class Evenement {
 	/**
 	 * @return
 	 */
+	@XmlElement
 	public String getDecription() {
-		return Decription;
+		return decription;
 	}
 
 	/**
 	 * @param decription
 	 */
 	public void setDecription(String decription) {
-		Decription = decription;
+		this.decription = decription;
 	}
 
 	/**
 	 * @return
 	 */
+	@XmlElement
 	public Date getDate() {
 		return date;
 	}
@@ -124,6 +143,7 @@ public class Evenement {
 	/**
 	 * @return
 	 */
+	@XmlElement
 	public int getPrix() {
 		return prix;
 	}

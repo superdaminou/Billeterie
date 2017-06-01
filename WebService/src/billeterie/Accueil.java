@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import jaxb.User;
 
-@WebService
+
 public class Accueil extends HttpServlet{
 	
 	
@@ -28,9 +28,9 @@ public class Accueil extends HttpServlet{
 	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		//ServiceEvenement service=new ServiceEvenement();
-		//List<Evenement> listEvent= service.getAllEvents();
-		//set.addAll(listEvent);
+		ServiceEvenement service=new ServiceEvenement();
+		List<Evenement> listEvent= service.getAllEvents();
+		set.addAll(listEvent);
 		this.getServletContext().getRequestDispatcher( vue ).forward(request, response);
 		
 	}
@@ -43,11 +43,11 @@ public class Accueil extends HttpServlet{
 				if(request.getParameter("btnResa")!= null)
 				{
 					
-				//Accueil form = new InscriptionForm();
+				//InscriptionForm form = new InscriptionForm();
 				//form.inscrire(request);
 				//System.out.println(set.toString());
 				
-				//request.setAttribute("set", set);
+				request.setAttribute("set", set);
 				this.getServletContext().getRequestDispatcher(vue).forward(request, response);
 				}
 				
