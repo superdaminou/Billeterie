@@ -1,5 +1,7 @@
 package billeterie;
 
+import jaxb.User;
+
 public interface InscriptionService {
 	
 	public static User InscireUser(User user){

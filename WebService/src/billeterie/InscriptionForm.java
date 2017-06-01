@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import jaxb.User;
+
 public class InscriptionForm {
 	
 	private static final String CHAMP_NOM= "nom";

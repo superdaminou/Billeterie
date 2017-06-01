@@ -1,5 +1,8 @@
 package billeterie;
 
+import jaxb.Evenement;
+import jaxb.Reservation;
+import jaxb.User;
 
 public class ServiceReservation {
 

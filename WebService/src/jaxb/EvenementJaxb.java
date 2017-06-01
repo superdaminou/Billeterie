@@ -7,11 +7,11 @@ import java.io.*;
 
 public class EvenementJaxb {
 	
-	public void marshall(Class a,Object event) {
+	public void marshall(Evenement event) {
 		try {
-			String nomFichier = a.toString().substring(11);
+			String nomFichier = Evenement.class.toString().substring(11);
 			
-			JAXBContext contextObj = JAXBContext.newInstance(a);
+			JAXBContext contextObj = JAXBContext.newInstance(Evenement.class);
 		    Marshaller marshallerObj = contextObj.createMarshaller();  
 		    marshallerObj.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		    marshallerObj.marshal(event, System.out);
@@ -26,17 +26,17 @@ public class EvenementJaxb {
 
 	}
 	
-	public void unmarshall(Class a,Evenement event) {
+	public void unmarshall(Evenement event) {
 		try {
-			String nomFichier = a.toString().substring(11);
+			String nomFichier = Evenement.class.toString().substring(11);
 
 		
-			JAXBContext contextObj = JAXBContext.newInstance(a);
+			JAXBContext contextObj = JAXBContext.newInstance(Evenement.class);
 			Unmarshaller uns = contextObj.createUnmarshaller();
 			event = (Evenement) uns.unmarshal(new File("data/"+nomFichier+".xml"));
 				System.out.println("Evenement Informations");
 				System.out.println("id: "+event.getId());
-				System.out.println("name: "+event.getName());
+				System.out.println("name: "+event.getNom());
 				System.out.println("lieu: "+event.getLieu());
 				System.out.println("date: "+event.getDate());
 			

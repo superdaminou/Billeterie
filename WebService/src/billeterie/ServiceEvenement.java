@@ -3,6 +3,8 @@ package billeterie;
 import java.util.ArrayList;
 import java.util.List;
 
+import jaxb.Evenement;
+
 
 
 public class ServiceEvenement {

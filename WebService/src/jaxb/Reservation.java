@@ -1,4 +1,4 @@
-package billeterie;
+package jaxb;
 
 import java.io.IOException;
 import java.util.Collection;

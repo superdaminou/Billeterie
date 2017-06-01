@@ -1,56 +1,140 @@
 package jaxb;
 
+import java.util.Date;
 
-import javax.xml.bind.annotation.*;;
-  
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
-@XmlRootElement(name="Evenement")
+import billeterie.Lieu;
+
+@XmlRootElement(name="evenement")
+@XmlType(propOrder={"id","nbplace", "nom", "lieu",  "description", "date", "prix"})
 public class Evenement {
 	
-	private String id,name,lieu;
-	private int date;
-	
-	@XmlElement
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
+	public Evenement(){
+		
 	}
 	
-	@XmlElement
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
+	@XmlAttribute(name="id")
+	private int id;
 	
-	@XmlElement
-	public String getLieu() {
+	@XmlAttribute(name="nbplace")
+	private int nbPlace;
+	
+	@XmlAttribute(name="nom")
+	private String nom;
+	
+	@XmlAttribute(name="lieu")
+	private Lieu lieu;
+		
+	@XmlAttribute(name="description")
+	private String Decription;
+	
+	@XmlAttribute(name="date")
+	private  Date date;
+	
+	@XmlAttribute(name="prix")
+	private int prix;
+
+	/**
+	 * @return
+	 */
+	public int getNbPlace() {
+		return nbPlace;
+	}
+
+	/**
+	 * @param nbPlace
+	 */
+	public void setNbPlace(int nbPlace) {
+		this.nbPlace = nbPlace;
+	}
+
+	/**
+	 * @return
+	 */
+	public String getNom() {
+		return nom;
+	}
+
+	/**
+	 * @param nom
+	 */
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	/**
+	 * @return
+	 */
+	public Lieu getLieu() {
 		return lieu;
 	}
-	public void setLieu(String lieu) {
+
+	/**
+	 * @param lieu
+	 */
+	public void setLieu(Lieu lieu) {
 		this.lieu = lieu;
 	}
-	
-	@XmlElement
-	public int getDate() {
+
+	/**
+	 * @return
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * @param id
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	/**
+	 * @return
+	 */
+	public String getDecription() {
+		return Decription;
+	}
+
+	/**
+	 * @param decription
+	 */
+	public void setDecription(String decription) {
+		Decription = decription;
+	}
+
+	/**
+	 * @return
+	 */
+	public Date getDate() {
 		return date;
 	}
-	public void setDate(int date) {
+
+	/**
+	 * @param date
+	 */
+	public void setDate(Date date) {
 		this.date = date;
 	}
-	
-	public Evenement(String id, String name, String lieu, int date) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.lieu = lieu;
-		this.date = date;
+
+	/**
+	 * @return
+	 */
+	public int getPrix() {
+		return prix;
 	}
-	public Evenement() {
-		super();
+
+	/**
+	 * @param prix
+	 */
+	public void setPrix(int prix) {
+		this.prix = prix;
 	}
 	
+	
+
 }
