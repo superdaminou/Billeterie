@@ -1,12 +1,12 @@
 package iQueryLoader;
 
-import static org.hamcrest.CoreMatchers.is; 
-import static org.junit.Assert.assertThat; 
+//import static org.hamcrest.CoreMatchers.is; 
+//import static org.junit.Assert.assertThat; 
 
 // Autres import 
 public class QueriesTest { 
   
-    private Queries queries; 
+ /*   private Queries queries; 
   
     @Before 
     public void before() { 
@@ -94,5 +94,5 @@ public class QueriesTest {
         assertThat(query.getName(), is(expectedQuery.getName())); 
         assertThat(query.getQuery().trim(), is(expectedQuery.getQuery().trim())); 
     } 
-  
+ */ 
 } 

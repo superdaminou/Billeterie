@@ -1,54 +1,81 @@
 package jaxb;
 
-
 import javax.xml.bind.*;
 import javax.xml.transform.Result;
 import java.io.*;
+import java.util.Iterator;
+
+import org.w3c.dom.Element;
 
 public class EvenementJaxb {
+
+	public String nomFichier;
+
+	public EvenementJaxb(String nomFichier) {
+		super();
+		this.nomFichier = nomFichier;
+	}
+
+	public String getNomFichier() {
+		return nomFichier;
+	}
+
+	public void setNomFichier(String nomFichier) {
+		this.nomFichier = nomFichier;
+	}
+
+	public void marshall(Evenements event) {
+
+		StringWriter writer = new StringWriter();
+		JAXB.marshal(event, new File("src/jaxb/"+nomFichier));
+		JAXB.marshal(event, writer);
+		String xmlString = writer.toString();
+		System.out.println(xmlString);
+
+	}
+
+	public Evenements unmarshall(Evenements events) {
+
+		InputStream xmlStream = Evenements.class.getResourceAsStream(nomFichier);
+		events = JAXB.unmarshal(xmlStream, Evenements.class);
+		Iterator<Evenements> it = events.iterator();
+		System.out.println("Evenement Informations");
+		System.out.println("id: " + events.toString());
+		
+		return events;
+	}
 	
-	public EvenementJaxb() {
+	/*Old marshalling
+	 * try { 
+	 * JAXBContext contextObj = JAXBContext.newInstance(Evenements.class); 
+	 * Marshaller marshallerObj = contextObj.createMarshaller();
+	 * marshallerObj.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+	 * marshallerObj.marshal(event, System.out);
+	 * marshallerObj.marshal(event, new File("data/" + nomFichier +".xml"));
+	 * 
+	 * } catch (JAXBException e) { 
+	 * System.out.println("" + e.getMessage());
+	 * e.printStackTrace(); 
+	 * }
+	 */
 
-	}
-
-	public void marshall(Evenement event) {
-		try {
-			String nomFichier = Evenement.class.toString().substring(11);
-			
-			JAXBContext contextObj = JAXBContext.newInstance(Evenement.class);
-		    Marshaller marshallerObj = contextObj.createMarshaller();  
-		    marshallerObj.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-		    marshallerObj.marshal(event, System.out);
-		    marshallerObj.marshal(event, new File("data/"+nomFichier+".xml"));  
-
-		
-		
-		} catch (JAXBException e) {
-			System.out.println(""+e.getMessage());
-			e.printStackTrace();
-		}
-
-	}
+	//old unmarshalling
+	//try{ 
+	//JAXBContext contextObj = JAXBContext.newInstance(Reservation.class);
+	// Unmarshaller uns = contextObj.createUnmarshaller();
+	// event = (Evenement) uns.unmarshal(new
+	// File("data/"+nomFichier+".xml")); 
+	//} catch (JAXBException e) {
+	// System.out.println(""+e.getMessage());
+	// e.printStackTrace();
+	// }
 	
-	public void unmarshall(Evenement event) {
-		try {
-			String nomFichier = Evenement.class.toString().substring(11);
-
-		
-			JAXBContext contextObj = JAXBContext.newInstance(Evenement.class);
-			Unmarshaller uns = contextObj.createUnmarshaller();
-			
-			event = (Evenement) uns.unmarshal(new File("data/"+nomFichier+".xml"));
-				System.out.println("Evenement Informations");
-				System.out.println("id: "+event.getId());
-				System.out.println("name: "+event.getNom());
-				System.out.println("lieu: "+event.getLieu());
-				System.out.println("date: "+event.getDate());
-			
-		} catch (JAXBException e) {
-			System.out.println(""+e.getMessage());
-			e.printStackTrace();
-		}
-	}
+	/*
+	 * 
+	 * ReadXMLFile fileXML = new ReadXMLFile("data/"+nomFichier+".xml"); Element
+	 * racine = fileXML.recupRacine(); return racine;
+	 * 
+	 * 
+	 */
 
 }

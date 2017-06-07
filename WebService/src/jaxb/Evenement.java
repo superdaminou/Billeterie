@@ -9,33 +9,19 @@ import javax.xml.bind.annotation.XmlType;
 
 import billeterie.Lieu;
 
-@XmlRootElement(name="evenement")
+@XmlRootElement(name = "evenement")
 
 public class Evenement {
-	
 
-	
-	
-	
 	private int id;
-	
 	private int nbPlace;
-	
 	private String nom;
-	
 	private Lieu lieu;
-		
 	private String decription;
-	
-	private  Date date;
-	
+	private Date date;
 	private int prix;
 
-	
-	
-	
-	
-	public Evenement( int nbPlace, String nom, Lieu lieu, String decription, Date date, int prix) {
+	public Evenement(int nbPlace, String nom, Lieu lieu, String decription, Date date, int prix) {
 
 		this.nbPlace = nbPlace;
 		this.nom = nom;
@@ -43,13 +29,13 @@ public class Evenement {
 		this.decription = decription;
 		this.date = date;
 		this.prix = prix;
-		this.id=10;
+		this.id = 10;
 	}
 
-	public Evenement(){
-		
+	public Evenement() {
+
 	}
-	
+
 	/**
 	 * @return
 	 */
@@ -154,7 +140,5 @@ public class Evenement {
 	public void setPrix(int prix) {
 		this.prix = prix;
 	}
-	
-	
 
 }

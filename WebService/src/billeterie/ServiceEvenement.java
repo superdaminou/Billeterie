@@ -10,6 +10,7 @@ import javax.jws.soap.SOAPBinding.Style;
 
 import jaxb.Evenement;
 import jaxb.EvenementJaxb;
+import jaxb.Evenements;
 
 
 @WebService
@@ -23,13 +24,16 @@ public class ServiceEvenement {
 
 	/**
 	 * @param event
+	 * On va recuperer l'ensemble des evennements présents dans le fichier xml
+	 * ajouter l'evennement à la liste des evennements
+	 * reecrire le fichier xml avec la liste des events
 	 * @return
 	 */
 	@WebMethod
-	public boolean addEvent(Evenement event)
+	public boolean addEvent(Evenements events, String nomFichierXml)
 	{
-		EvenementJaxb ejb = new EvenementJaxb();
-		ejb.marshall(event);
+		EvenementJaxb ejb = new EvenementJaxb(nomFichierXml);
+		ejb.marshall(events);
 		
 		return true;
 	}
@@ -52,7 +56,7 @@ public class ServiceEvenement {
 	@WebMethod
 	public boolean modifyEvent(Evenement newEvent, int idEventAModifier)
 	{
-		EvenementJaxb ejb = new EvenementJaxb();
+		EvenementJaxb ejb = new EvenementJaxb("Evenement");
 		return true;
 	}
 

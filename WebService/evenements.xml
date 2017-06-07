@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<evenements>
+    <evenement>
+        <date>2017-06-08T00:40:24.720+02:00</date>
+        <decription>description</decription>
+        <id>10</id>
+        <lieu>
+            <codePostal>0</codePostal>
+            <ID>0</ID>
+        </lieu>
+        <nbPlace>130</nbPlace>
+        <nom>BOOBA</nom>
+        <prix>25</prix>
+    </evenement>
+    <evenement>
+        <date>2017-06-08T00:40:24.720+02:00</date>
+        <decription>Psy - Trance</decription>
+        <id>10</id>
+        <lieu>
+            <codePostal>0</codePostal>
+            <ID>0</ID>
+        </lieu>
+        <nbPlace>150</nbPlace>
+        <nom>Hilight Tribe</nom>
+        <prix>25</prix>
+    </evenement>
+</evenements>
