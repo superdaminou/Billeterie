@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<queries> 
+    <group name="group1"> 
+        <query name="query1"> 
+            SELECT field1 FROM table1 
+        </query> 
+        <query name="query2"> 
+            SELECT field2 FROM table2 
+        </query> 
+    </group> 
+    <group name="group2"> 
+        <query name="query3"> 
+            SELECT field3 FROM table3 
+        </query> 
+        <query name="query4"> 
+            SELECT field4 FROM table4 
+        </query> 
+    </group> 
+</queries> 

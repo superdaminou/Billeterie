@@ -7,9 +7,6 @@ import java.io.*;
 
 public class EvenementJaxb {
 	
-	
-	
-	
 	public EvenementJaxb() {
 
 	}
