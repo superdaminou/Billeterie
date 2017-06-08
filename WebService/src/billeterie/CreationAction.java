@@ -25,8 +25,6 @@ public class CreationAction extends HttpServlet {
 		int id= (int) request.getAttribute("idEvent");
 		
 		Evenement event= new Evenement();
-		event = ServiceEvenement.getEvent(id);
-		request.setAttribute("event", event);
 		
 		
 	}
@@ -59,7 +57,7 @@ public class CreationAction extends HttpServlet {
 			
 			Evenement event=new Evenement(nbPlace,nom, lieu, description, date, prix);
 			
-			ServiceEvenement.addEvent(event);
+			//ServiceEvenement.addEvent(event);
 			
 		
 		
