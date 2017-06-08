@@ -11,16 +11,13 @@ import javax.jws.soap.SOAPBinding.Style;
 import jaxb.Evenement;
 import jaxb.EvenementJaxb;
 import jaxb.Evenements;
-
+import jaxb.*;
 
 @WebService
 @SOAPBinding(style=Style.RPC) 
-public class ServiceEvenement {
+public abstract class ServiceEvenement {
 
 	
-	public ServiceEvenement() {
-
-	}
 
 	/**
 	 * @param event
@@ -64,10 +61,10 @@ public class ServiceEvenement {
 	 * @return
 	 */
 	@WebMethod
-	public List<Evenement> getAllEvents()
+	public static List<Evenement> getAllEvents()
 	{
-		List<Evenement> liste = new ArrayList<Evenement>();
-		return liste;
+		Evenements list = new Evenements();
+		return list.getEvents();
 	}
 	
 	/**
@@ -75,7 +72,7 @@ public class ServiceEvenement {
 	 * @return
 	 */
 	@WebMethod
-	public Evenement getEvent(int idEvent)
+	public static Evenement getEvent(int idEvent)
 	{
 		
 		Evenement event = new Evenement();

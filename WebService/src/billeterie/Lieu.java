@@ -7,6 +7,13 @@ public class Lieu {
 		
 	}
 	
+	public Lieu(String nom, String adresse, int codePostal, String ville){
+		this.setNom(nom);
+		this.setAdresse(adresse);
+		this.setCodePostal(codePostal);
+		this.setVille(ville);
+	}
+	
 	private String adresse;
 	
 	private String nom;

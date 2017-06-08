@@ -15,9 +15,6 @@
 </head>
 <body> 
 
- <h1>Consultation Evenement</h1>
-
-
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -34,8 +31,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
+        <li class="active"><a href="/WEB-INF/ajoutEvent.jsp">Creer <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Modifier</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -81,11 +78,11 @@
     <label for="exampleInputName2">Prenom</label>
     <input type="text" class="form-control" name="prenom" id="prenom" placeholder="Prenom">
   </div>
-  <button type="submit" name="btnResa" value ="1"  class="btn btn-default">Reservation</button>
+  <button type="submit" name="ajouter" value ="1"  class="btn btn-default">ajouter</button>
 </form>
 
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
- 	<c:forEach var="personne" items= "${set}">
+ 	<c:forEach var="evenements" items= "${set}">
  	
  	<div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
@@ -97,9 +94,9 @@
     </div>
     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
       <div class="panel-body">
-      ${personne.getNom()}, ${personne.getPrenom()}</p>
+      ${evenements.getNom()}, ${evenement.getLieu().getNom()}</p>
 		<form action="${pageContext.request.contextPath}/Acceuil" method="post">		
-		<button value="Reserver" class="btn btn-default" stype="submit" >Reserver</button>
+		<button name="btnResa" value="${evenement.getId} class="btn btn-default" stype="submit" >Reserver</button>
 		</form>
       </div>
     </div>
