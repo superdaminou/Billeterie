@@ -1,4 +1,4 @@
-package jaxb;
+package old;
 
 import java.io.File;
 
@@ -9,10 +9,13 @@ import javax.xml.bind.Unmarshaller;
 
 import javax.xml.bind.*;
 import javax.xml.transform.Result;
+
+import jaxb.Reservation;
+
 import java.io.*;
 
 
-public class ReservationJaxb {
+public class OldJaxb {
 	
 	public void marshall(Reservation resa) {
 		try {

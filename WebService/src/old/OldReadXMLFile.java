@@ -1,4 +1,4 @@
-package jaxb;
+package old;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,12 +13,12 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class ReadXMLFile {
+public class OldReadXMLFile {
 	
 	public static String xmlWay;
 	
 	
-    public ReadXMLFile(String xmlWay) {
+    public OldReadXMLFile(String xmlWay) {
 		this.xmlWay = xmlWay;
 	}
 

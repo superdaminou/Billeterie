@@ -21,9 +21,7 @@ public abstract class ServiceEvenement {
 
 	/**
 	 * @param event
-	 * On va recuperer l'ensemble des evennements présents dans le fichier xml
-	 * ajouter l'evennement à la liste des evennements
-	 * reecrire le fichier xml avec la liste des events
+	 * On ajoute la liste de tous les evennements aux fichier xml
 	 * @return
 	 */
 	@WebMethod
@@ -37,6 +35,10 @@ public abstract class ServiceEvenement {
 	
 	/**
 	 * @param idEventASuppr
+	 * Récupère la liste des events
+	 * accède à l'event à supprimer
+	 * supprime l'event
+	 * renvoie la liste des events dans l'xml
 	 * @return
 	 */
 	@WebMethod
@@ -48,23 +50,31 @@ public abstract class ServiceEvenement {
 	/**
 	 * @param newEvent
 	 * @param idEventAModifier
+	 * Récupère la liste des events, accède à la l event
+	 * Modifie l event
+	 * Renvoi la liste des events dans l'xml
 	 * @return
 	 */
 	@WebMethod
 	public boolean modifyEvent(Evenement newEvent, int idEventAModifier)
 	{
+		
 		EvenementJaxb ejb = new EvenementJaxb("Evenement");
 		return true;
 	}
 
 	/**
+	 * @param nomFichierXml
+	 * Récupère tous les events dans une liste d'event -> Evenements
 	 * @return
 	 */
 	@WebMethod
-	public static List<Evenement> getAllEvents()
+	public static Evenements getAllEvents(String nomFichierXml)
 	{
-		Evenements list = new Evenements();
-		return list.getEvents();
+		EvenementJaxb ejb = new EvenementJaxb(nomFichierXml);
+		Evenements listAllEvents = new Evenements();
+		listAllEvents = ejb.unmarshall();
+		return listAllEvents;
 	}
 	
 	/**
