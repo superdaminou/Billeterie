@@ -25,12 +25,19 @@ public abstract class ServiceEvenement {
 	 * @return
 	 */
 	@WebMethod
-	public boolean addEvent(Evenements events, String nomFichierXml)
+	public boolean addEvents(Evenements events, String nomFichierXml)
 	{
 		EvenementJaxb ejb = new EvenementJaxb(nomFichierXml);
 		ejb.marshall(events);
 		
 		return true;
+	}
+	
+	public void addUnEvent(Evenement newEvent, String nomFichierXml){
+		Evenements events = getAllEvents(nomFichierXml);
+		events.addevent(newEvent);
+		addEvents(events, nomFichierXml);
+		
 	}
 	
 	/**
@@ -42,8 +49,13 @@ public abstract class ServiceEvenement {
 	 * @return
 	 */
 	@WebMethod
-	public boolean deleteEvent(int idEventASuppr)
+	public boolean deleteEvent(int idEventASuppr, String nomFichierXml)
 	{
+		Evenements events = getAllEvents(nomFichierXml);
+		Evenement e = getEvent(idEventASuppr);
+		events.getEvents().remove(e.getId());
+		addEvents(events, nomFichierXml);
+		
 		return true;
 	}
 	
@@ -56,10 +68,12 @@ public abstract class ServiceEvenement {
 	 * @return
 	 */
 	@WebMethod
-	public boolean modifyEvent(Evenement newEvent, int idEventAModifier)
+	public boolean modifyEvent(Evenement newEvent, int idEventAModifier, String nomFichierXml)
 	{
 		
-		EvenementJaxb ejb = new EvenementJaxb("Evenement");
+		Evenements events = getAllEvents(nomFichierXml);
+		deleteEvent(idEventAModifier, nomFichierXml);
+		addUnEvent(newEvent, nomFichierXml);
 		return true;
 	}
 
@@ -84,7 +98,6 @@ public abstract class ServiceEvenement {
 	@WebMethod
 	public static Evenement getEvent(int idEvent)
 	{
-		
 		Evenement event = new Evenement();
 		return event ;
 	}

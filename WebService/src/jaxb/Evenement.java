@@ -1,6 +1,8 @@
 package jaxb;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
@@ -20,8 +22,9 @@ public class Evenement {
 	private String decription;
 	private Date date;
 	private int prix;
+	private List<Reservation> listResa = new ArrayList<Reservation>();
 
-	public Evenement(int nbPlace, String nom, Lieu lieu, String decription, Date date, int prix) {
+	public Evenement(int id, int nbPlace, String nom, Lieu lieu, String decription, Date date, int prix, ArrayList<Reservation> listResa) {
 
 		this.nbPlace = nbPlace;
 		this.nom = nom;
@@ -29,13 +32,14 @@ public class Evenement {
 		this.decription = decription;
 		this.date = date;
 		this.prix = prix;
-		this.id = 10;
+		this.id = id;
+		this.listResa = listResa;
 	}
 
 	public Evenement() {
 
 	}
-
+	
 	/**
 	 * @return
 	 */
@@ -140,5 +144,20 @@ public class Evenement {
 	public void setPrix(int prix) {
 		this.prix = prix;
 	}
+
+	/**
+	 * @return
+	 */
+	public List<Reservation> getListResa() {
+		return listResa;
+	}
+
+	/**
+	 * @param listResa
+	 */
+	public void setListResa(List<Reservation> listResa) {
+		this.listResa = listResa;
+	}
+	
 
 }
