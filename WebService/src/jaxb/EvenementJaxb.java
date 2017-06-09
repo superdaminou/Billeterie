@@ -32,6 +32,7 @@ public class EvenementJaxb {
 		
 		// Affichage
 		String xmlString = writer.toString();
+		System.out.println("Marshal");
 		System.out.println(xmlString);
 
 	}
@@ -43,7 +44,7 @@ public class EvenementJaxb {
 		Evenements events = JAXB.unmarshal(xmlStream, Evenements.class);
 		
 		// Affichage
-		System.out.println("Evenement Informations");
+		System.out.println("Unmarshal");
 		System.out.println("id: " + events.toString());
 		
 		return events;

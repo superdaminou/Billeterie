@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <evenements>
     <evenement>
-        <date>2017-06-08T00:41:28.034+02:00</date>
+        <date>2017-06-09T18:08:07.612+02:00</date>
         <decription>description</decription>
         <id>10</id>
         <lieu>
@@ -9,19 +9,31 @@
             <ID>0</ID>
         </lieu>
         <nbPlace>130</nbPlace>
-        <nom>BOOBA</nom>
+        <nom>Parov Stelar</nom>
         <prix>25</prix>
     </evenement>
     <evenement>
-        <date>2017-06-08T00:41:28.034+02:00</date>
-        <decription>Psy - Trance</decription>
-        <id>10</id>
+        <date>2017-06-09T18:08:20.032+02:00</date>
+        <decription>POP</decription>
+        <id>2</id>
         <lieu>
             <codePostal>0</codePostal>
             <ID>0</ID>
         </lieu>
         <nbPlace>150</nbPlace>
-        <nom>Hilight Tribe</nom>
+        <nom>LEJ</nom>
+        <prix>25</prix>
+    </evenement>
+    <evenement>
+        <date>2017-06-09T18:18:16.042+02:00</date>
+        <decription>POP</decription>
+        <id>2</id>
+        <lieu>
+            <codePostal>0</codePostal>
+            <ID>0</ID>
+        </lieu>
+        <nbPlace>150</nbPlace>
+        <nom>LEJ</nom>
         <prix>25</prix>
     </evenement>
 </evenements>

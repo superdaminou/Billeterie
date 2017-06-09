@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <evenements>
     <evenement>
-        <date>2017-06-08T00:40:00.461+02:00</date>
+        <date>2017-06-08T00:40:24.720+02:00</date>
         <decription>description</decription>
         <id>10</id>
         <lieu>
@@ -13,7 +13,7 @@
         <prix>25</prix>
     </evenement>
     <evenement>
-        <date>2017-06-08T00:40:00.461+02:00</date>
+        <date>2017-06-08T00:40:24.720+02:00</date>
         <decription>Psy - Trance</decription>
         <id>10</id>
         <lieu>

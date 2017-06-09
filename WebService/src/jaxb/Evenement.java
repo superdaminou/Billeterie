@@ -158,5 +158,10 @@ public class Evenement {
 		this.listResa = listResa;
 	}
 	
+	public String toString(){
+		return "ID : "+id+", nbplace : "+nbPlace+nom+lieu+decription+date+prix;
+		
+	}
+	
 
 }
