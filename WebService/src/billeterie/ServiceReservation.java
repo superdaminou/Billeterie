@@ -11,7 +11,7 @@ import javax.jws.soap.SOAPBinding.Style;
 
 @WebService
 @SOAPBinding(style=Style.RPC)
-public class ServiceReservation {
+public abstract class ServiceReservation {
 
 	
 	/**
@@ -27,7 +27,7 @@ public class ServiceReservation {
 		
 		Evenement event = new Evenement();//ici on appelle la méthode JAXB à la place de new Event
 		
-		event.setNbPlace(event.getNbPlace()- reservation.getNbPlace());
+		event.setNbPlace(event.getNbPlace()- reservation.getNbPlaceReserve());
 		
 		//Appel de la méthode de modification d'un événement
 		//Appel de la méthode d'écriture d'une résa

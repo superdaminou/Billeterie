@@ -17,7 +17,7 @@ import jaxb.*;
 @SOAPBinding(style=Style.RPC) 
 public abstract class ServiceEvenement {
 	
-	private static String nomFichierXml = "Evenement.xml";
+	private static final String nomFichierXml = "evenements.xml";
 	
 
 	/**
@@ -26,7 +26,7 @@ public abstract class ServiceEvenement {
 	 * @return
 	 */
 	@WebMethod
-	public boolean addEvents(Evenements events)
+	public static boolean addEvents(Evenements events)
 	{
 		EvenementJaxb ejb = new EvenementJaxb(nomFichierXml);
 		ejb.marshall(events);
@@ -34,7 +34,7 @@ public abstract class ServiceEvenement {
 		return true;
 	}
 	
-	public void addUnEvent(Evenement newEvent){
+	public static void addUnEvent(Evenement newEvent){
 		Evenements events = getAllEvents();
 		events.addevent(newEvent);
 		addEvents(events);

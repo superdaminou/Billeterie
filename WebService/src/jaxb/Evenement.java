@@ -24,7 +24,7 @@ public class Evenement {
 	private int prix;
 	private List<Reservation> listResa = new ArrayList<Reservation>();
 
-	public Evenement(int id, int nbPlace, String nom, Lieu lieu, String decription, Date date, int prix, ArrayList<Reservation> listResa) {
+	public Evenement(int id, int nbPlace, String nom, Lieu lieu, String decription, Date date, int prix) {
 
 		this.nbPlace = nbPlace;
 		this.nom = nom;
@@ -33,7 +33,6 @@ public class Evenement {
 		this.date = date;
 		this.prix = prix;
 		this.id = id;
-		this.listResa = listResa;
 	}
 
 	public Evenement() {

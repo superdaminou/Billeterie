@@ -9,11 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name="Reservation")
-@XmlType(propOrder={"idEvenement","user", "nbPlace", })
+@XmlType(propOrder={"user", "nbPlaceReserve", })
 public class Reservation extends HttpServlet {
 	
 	public Reservation()
@@ -21,14 +22,12 @@ public class Reservation extends HttpServlet {
 		
 	}
 	
-	@XmlAttribute(name="idEvenement")
-	private int idEvenement;
 	
-	@XmlAttribute(name="user")
+
+	
 	private User user;
 	
-	@XmlAttribute(name="nbPlace")
-	private int nbPlace; 
+	private int nbPlaceReserve; 
 	
 	
 	
@@ -52,23 +51,11 @@ public class Reservation extends HttpServlet {
 		this.getServletContext().getRequestDispatcher(res).forward(request, response);
 	}
 
-	/**
-	 * @return the idEvenement
-	 */
-	public int getIdEvenement() {
-		return idEvenement;
-	}
-
-	/**
-	 * @param idEvenement the idEvenement to set
-	 */
-	public void setIdEvenement(int idEvenement) {
-		this.idEvenement = idEvenement;
-	}
 
 	/**
 	 * @return the user
 	 */
+	@XmlElement
 	public User getUser() {
 		return user;
 	}
@@ -81,17 +68,18 @@ public class Reservation extends HttpServlet {
 	}
 
 	/**
-	 * @return the nbPlace
+	 * @return the nbPlaceReserve
 	 */
-	public int getNbPlace() {
-		return nbPlace;
+	@XmlElement
+	public int getNbPlaceReserve() {
+		return nbPlaceReserve;
 	}
 
 	/**
-	 * @param nbPlace the nbPlace to set
+	 * @param nbPlaceReserve the nbPlaceReserve to set
 	 */
-	public void setNbPlace(int nbPlace) {
-		this.nbPlace = nbPlace;
+	public void setNbPlaceReserve(int nbPlace) {
+		this.nbPlaceReserve = nbPlace;
 	}
 
 

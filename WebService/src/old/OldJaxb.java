@@ -45,7 +45,7 @@ public class OldJaxb {
 			Unmarshaller uns = contextObj.createUnmarshaller();
 			resa = (Reservation) uns.unmarshal(new File("data/"+nomFichier+".xml"));
 				System.out.println("Evenement Informations");
-				System.out.println("id: "+resa.getNbPlace());
+				System.out.println("id: "+resa.getNbPlaceReserve());
 
 		} catch (JAXBException e) {
 			System.out.println(""+e.getMessage());

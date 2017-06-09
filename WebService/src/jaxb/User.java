@@ -1,27 +1,25 @@
 package jaxb;
 
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name="User")
-@XmlType(propOrder={"id","nom", "prenom", "mail" })
+@XmlType(propOrder={"ID","nom", "prenom", "mail", "admin" })
 public class User{
 	
 	public User(){
 		
 	}
 	
-	@XmlAttribute(name="id")
+	
 	private int ID;
 	
-	@XmlAttribute(name="nom")
 	private String nom;
 	
-	@XmlAttribute(name="prenom")
 	private String prenom;
 	
-	@XmlAttribute(name="mail")
 	private String mail;
 	
 
@@ -29,7 +27,7 @@ public class User{
 	
 	private boolean admin;
 	
-
+	@XmlElement
 	public String getNom() {
 		return nom;
 	}
@@ -39,7 +37,7 @@ public class User{
 		this.nom = nom;
 	}
 
-
+	@XmlElement
 	public String getPrenom() {
 		return prenom;
 	}
@@ -49,7 +47,7 @@ public class User{
 		this.prenom = prenom;
 	}
 
-
+	@XmlElement
 	public String getMail() {
 		return mail;
 	}
@@ -59,7 +57,7 @@ public class User{
 		this.mail = mail;
 	}
 
-
+	@XmlElement
 	public int getID() {
 		return ID;
 	}
@@ -69,7 +67,7 @@ public class User{
 		ID = iD;
 	}
 
-
+	@XmlElement
 	public boolean isAdmin() {
 		return admin;
 	}

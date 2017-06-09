@@ -21,10 +21,6 @@ public class CreationAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	public void init(HttpServletRequest request){
-		System.out.println("reussi");
-		int id= (int) request.getAttribute("idEvent");
-		
-		Evenement event= new Evenement();
 		
 		
 	}
@@ -46,8 +42,6 @@ public class CreationAction extends HttpServlet {
 			Date date= (Date) request.getAttribute("date");
 			int nbPlace = (int) request.getAttribute("nbPlace");
 			
-			
-
 			String adresse= (String) request.getAttribute("adresse");
 			String nomLieu = (String) request.getAttribute("nomLieu");
 			int codePostal = (int) request.getAttribute("codePostale");
@@ -55,9 +49,8 @@ public class CreationAction extends HttpServlet {
 
 			Lieu lieu = new Lieu(nomLieu, adresse, codePostal, ville);
 			
-			Evenement event=new Evenement(nbPlace,nom, lieu, description, date, prix);
-			
-			//ServiceEvenement.addEvent(event);
+			Evenement event=new Evenement(4,nbPlace,nom, lieu, description, date, prix);
+			ServiceEvenement.addUnEvent(event);
 			
 		
 		

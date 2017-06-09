@@ -20,5 +20,14 @@
         <servlet-name>CreationAction</servlet-name>
         <url-pattern>/ajoutEvent</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ReservationAction</servlet-name>
+        <servlet-class>billeterie.ReservationAction</servlet-class>
+    </servlet>            
+    <servlet-mapping>
+        <servlet-name>ReservationAction</servlet-name>
+        <url-pattern>/reservation</url-pattern>
+    </servlet-mapping>
  
 </web-app>

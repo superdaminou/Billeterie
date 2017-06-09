@@ -30,20 +30,18 @@ public class AccueilAction extends HttpServlet{
 	
 	
 	
-	public void init(){
-		Evenement ev= new Evenement();
-		ev.setNom("Moi");
-		set.add(ev);
-		List<Evenement> listEvent= ServiceEvenement.getAllEvents();
-		set.addAll(listEvent);
-		this.getServletContext().setAttribute("set", set);
+	public void init(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		this.getServletContext().getRequestDispatcher(vue).forward(request, response);
 		
 	}
 	/* (non-Javadoc)
 	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-
+		List<Evenement> listEvent= ServiceEvenement.getAllEvents().getEvents();
+		set.addAll(listEvent);
+		this.getServletContext().setAttribute("set", set);
+		this.getServletContext().getRequestDispatcher(vue).forward(request, response);
 		
 	}
 	
@@ -54,11 +52,13 @@ public class AccueilAction extends HttpServlet{
 		//On regarde si l'utilisateur a cliqué sur le bouton Réservation
 		
 				if(request.getParameter("btnResa")!= null)
-				{
-					
-					request.getAttribute("btnResa");
-					
-				
+				{	
+					request.setAttribute("idEvt", request.getParameter("btnResa"));
+					try{
+						this.getServletContext().getRequestDispatcher("/ReservationAction").forward(request, response);
+					}catch(Exception e){
+						e.printStackTrace();
+					}
 				
 				}
 				
@@ -68,9 +68,9 @@ public class AccueilAction extends HttpServlet{
 				{
 					
 					try{
-						this.getServletContext().getRequestDispatcher("/CreationAction").include(request, response);
+						this.getServletContext().getRequestDispatcher("/CreationAction").forward(request, response);
 					}catch(Exception e){
-						
+						e.printStackTrace();
 					}
 				}
 	}
