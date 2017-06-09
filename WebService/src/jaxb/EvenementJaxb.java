@@ -38,15 +38,8 @@ public class EvenementJaxb {
 	}
 
 	public Evenements unmarshall() {
-
-		
 		InputStream xmlStream = Evenements.class.getResourceAsStream(nomFichier);
 		Evenements events = JAXB.unmarshal(xmlStream, Evenements.class);
-		
-		// Affichage
-		System.out.println("Unmarshal");
-		System.out.println("id: " + events.toString());
-		
 		return events;
 	}
 

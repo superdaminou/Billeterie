@@ -1,6 +1,7 @@
 package billeterie;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.jws.WebMethod;
@@ -38,7 +39,6 @@ public abstract class ServiceEvenement {
 		Evenements events = getAllEvents();
 		events.addevent(newEvent);
 		addEvents(events);
-		
 	}
 	
 	/**
@@ -109,6 +109,24 @@ public abstract class ServiceEvenement {
 		}
 		
 		return 0;
+	}
+	
+	public  static Evenement nouvelEvenement(int nbPlace, String nom, Lieu lieu, String decription, Date date, int prix){
+		/*On récupere l'ensembles des events
+		 * on calcul le dernier id
+		 * on incrémente
+		 * on cre un event avec le bon id
+		 */
+		int id = compteNbEvent()+1;
+		Evenement event; 
+		return event = new Evenement(id, nbPlace, nom, lieu, decription, date, prix);
+
+	}
+	
+	public static int compteNbEvent(){
+		Evenements events = getAllEvents();
+		return events.getEvents().size();
+		
 	}
 
 }
