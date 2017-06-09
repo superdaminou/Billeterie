@@ -37,13 +37,19 @@
 			    <label for="exampleInputName2">Nom</label>
 			    <input type="text" class="form-control" name="nom" id="nom" placeholder="Nom">
 			</div>
-			
+			<div class="form-group">
+			    <label for="exampleInputName2">Prenom</label>
+			    <input type="text" class="form-control" name="prenom" id="prenom" placeholder="Prenom">
+			</div><div class="form-group">
+			    <label for="exampleInputName2">Email</label>
+			    <input type="text" class="form-control" name="email" id="email" placeholder="Email">
+			</div>
 			<div class="form-group">
 			    <label for="exampleInputName2">Nombre de place</label>
-			    <input type="text" class="form-control" name="prenom" id="prenom" placeholder="Prenom">
+			    <input type="text" class="form-control" name="nbPlace" id="nbPlace" placeholder="Nombre de Place">
 			</div>
 			
-			  	<button type="submit" name="ajouter" value ="1"  class="btn btn-default">Reserver</button>
+			  	<button type="submit" name="reservation" value ="1"  class="btn btn-default">Reserver</button>
 		</form>
      </div>
       

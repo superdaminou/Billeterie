@@ -36,9 +36,11 @@ public class CreationAction extends HttpServlet {
 
 		if(request.getParameter("creer")!= null)
 		{
+			try{
+				
 			String nom= (String) request.getAttribute("nom");
 			String description= (String) request.getAttribute("description");
-			int prix= (int) request.getAttribute("prix");
+			int prix= (Integer) request.getAttribute("prix");
 			Date date= (Date) request.getAttribute("date");
 			int nbPlace = (int) request.getAttribute("nbPlace");
 			
@@ -49,13 +51,34 @@ public class CreationAction extends HttpServlet {
 
 			Lieu lieu = new Lieu(nomLieu, adresse, codePostal, ville);
 			
-			Evenement event=new Evenement(4,nbPlace,nom, lieu, description, date, prix);
-			ServiceEvenement.addUnEvent(event);
+			Evenement evt= ServiceEvenement.nouvelEvenement( nbPlace,  nom,  lieu,  description,  date,  prix);
 			
-		
-		
+			ServiceEvenement.addUnEvent(evt);
+			}catch (NullPointerException e ){
+				e.printStackTrace();
+			}
+			
 		}
 	  }
+	
+	public Evenement nouvelEvenement(HttpServletRequest request){
+		String nom= (String) request.getAttribute("nom");
+		String description= (String) request.getAttribute("description");
+		int prix= (Integer) request.getAttribute("prix");
+		Date date= (Date) request.getAttribute("date");
+		int nbPlace = (int) request.getAttribute("nbPlace");
+		
+		String adresse= (String) request.getAttribute("adresse");
+		String nomLieu = (String) request.getAttribute("nomLieu");
+		int codePostal = (int) request.getAttribute("codePostale");
+		String ville = (String) request.getAttribute("ville");
+
+		Lieu lieu = new Lieu(nomLieu, adresse, codePostal, ville);
+		
+		Evenement event=new Evenement(4,nbPlace,nom, lieu, description, date, prix);
+		return event;
+	}
+	
 
 	
 }

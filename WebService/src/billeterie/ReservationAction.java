@@ -38,7 +38,7 @@ public class ReservationAction extends HttpServlet {
 		
 	}
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	  {
 
 		if(request.getParameter("reserver")!= null)
@@ -55,8 +55,8 @@ public class ReservationAction extends HttpServlet {
 			Reservation resa = new Reservation();
 			resa.setNbPlaceReserve(Integer.parseInt(nbPlace));
 			resa.setUser(user);
-			//ServiceReservation.addResa(event);
-			
+			ServiceReservation.doReservation(resa,Integer.parseInt(request.getParameter("idEvt")));
+			this.getServletContext().getRequestDispatcher( vue ).forward(request, response);
 		
 		
 		}

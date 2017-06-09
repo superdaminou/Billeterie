@@ -38,9 +38,9 @@ public class AccueilAction extends HttpServlet{
 	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		List<Evenement> listEvent= ServiceEvenement.getAllEvents().getEvents();
-		set.addAll(listEvent);
-		this.getServletContext().setAttribute("set", set);
+		AccueilForm f = new AccueilForm();
+		f.setListEvent(ServiceEvenement.getAllEvents().getEvents());
+		this.getServletContext().setAttribute("set", f.getListEvent());
 		this.getServletContext().getRequestDispatcher(vue).forward(request, response);
 		
 	}

@@ -99,32 +99,32 @@
 			    <label for="exampleInputName2">Nom</label>
 			    <input type="text" class="form-control" name="nom" id="nom" placeholder="Nom">
 			</div>
-			<div class="form-group">
+			<div class="form-inline">
 			    <label for="exampleInputName2">Lieu</label>
 			    
 			    <div class="form-inline">
 			    <div class="form-group">
 			    	<label for="exampleInputName2">Nom</label>
 			    
-			    	<input type="text" class="form-control" name="prenom" id="prenom" placeholder="Prenom">
+			    	<input type="text" class="form-control" name="nom" id="nom" placeholder="Nom">
 				</div>
 				
 				<div class="form-group">
 			    	<label for="exampleInputName2">Adresse</label>
 			    
-			    	<input type="text" class="form-control" name="prenom" id="prenom" placeholder="Prenom">
+			    	<input type="text" class="form-control" name="adresse" id="adresse" placeholder="Prenom">
 				</div>
 				
 				<div class="form-group">
 			    	<label for="exampleInputName2">Code Postal</label>
 			    
-			    	<input type="text" class="form-control" name="prenom" id="prenom" placeholder="Prenom">
+			    	<input type="text" class="form-control" name="codePostal" id="codePostal" placeholder="codePostal">
 				</div>
 				
 				<div class="form-group">
 			    	<label for="exampleInputName2">Ville</label>
 			    
-			    	<input type="text" class="form-control" name="prenom" id="prenom" placeholder="Prenom">
+			    	<input type="text" class="form-control" name="ville" id="ville" placeholder="Prenom">
 				</div>
 			    
 			    </div>
@@ -133,21 +133,21 @@
 			</div>
 			<div class="form-group">
 			    <label for="exampleInputName2">Date</label>
-			    <input type="text" class="form-control" name="prenom" id="prenom" placeholder="Prenom">
+			    <input type="text" class="form-control" name="date" id="date" placeholder="Date">
 			</div>
 			<div class="form-group">
 			    <label for="exampleInputName2">Prix</label>
-			    <input type="text" class="form-control" name="prenom" id="prenom" placeholder="Prenom">
+			    <input type="number" class="form-control" name="prix" id="prix" placeholder="Prix">
 			</div>
 			<div class="form-group">
 			    <label for="exampleInputName2">Nombre de place</label>
-			    <input type="text" class="form-control" name="prenom" id="prenom" placeholder="Prenom">
+			    <input type="text" class="form-control" name="nbPlace" id="nbPLace" placeholder="nbPlace">
 			</div>
 			<div class="form-group">
 			    <label for="exampleInputName2">Description</label>
-			    <input type="text" class="form-control" name="prenom" id="prenom" placeholder="Prenom">
+			    <input type="text" class="form-control" name="description" id="description" placeholder="Prenom">
 			</div>
-			  	<button type="submit" name="ajouter" value ="1"  class="btn btn-default">ajouter</button>
+			  	<button type="submit" name="creer" value ="1"  class="btn btn-default">ajouter</button>
 		</form>  
 		
 		</div>    

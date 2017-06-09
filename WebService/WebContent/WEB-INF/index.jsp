@@ -75,7 +75,7 @@
       <div class="panel-body">
       ${evenements.getNom()}, ${evenements.getLieu().getNom()}</p>
 		<form action="#" method="post">		
-		<button name="btnResa" value="${evenements.getNom()}" class="btn btn-default" stype="submit" >Reserver</button>
+		<button name="btnResa" value="${evenements.getId()}" class="btn btn-default" stype="submit" >Reserver</button>
 		</form>
       </div>
     </div>
