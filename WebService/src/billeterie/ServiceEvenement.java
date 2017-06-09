@@ -16,7 +16,8 @@ import jaxb.*;
 @WebService
 @SOAPBinding(style=Style.RPC) 
 public abstract class ServiceEvenement {
-
+	
+	private static String nomFichierXml = "Evenement.xml";
 	
 
 	/**
@@ -25,7 +26,7 @@ public abstract class ServiceEvenement {
 	 * @return
 	 */
 	@WebMethod
-	public boolean addEvents(Evenements events, String nomFichierXml)
+	public boolean addEvents(Evenements events)
 	{
 		EvenementJaxb ejb = new EvenementJaxb(nomFichierXml);
 		ejb.marshall(events);
@@ -33,10 +34,10 @@ public abstract class ServiceEvenement {
 		return true;
 	}
 	
-	public void addUnEvent(Evenement newEvent, String nomFichierXml){
-		Evenements events = getAllEvents(nomFichierXml);
+	public void addUnEvent(Evenement newEvent){
+		Evenements events = getAllEvents();
 		events.addevent(newEvent);
-		addEvents(events, nomFichierXml);
+		addEvents(events);
 		
 	}
 	
@@ -49,12 +50,12 @@ public abstract class ServiceEvenement {
 	 * @return
 	 */
 	@WebMethod
-	public boolean deleteEvent(int idEventASuppr, String nomFichierXml)
+	public boolean deleteEvent(int idEventASuppr)
 	{
-		Evenements events = getAllEvents(nomFichierXml);
-		Evenement e = getEvent(idEventASuppr);
+		Evenements events = getAllEvents();
+		Evenement e = getEvent(events,idEventASuppr);
 		events.getEvents().remove(e.getId());
-		addEvents(events, nomFichierXml);
+		addEvents(events);
 		
 		return true;
 	}
@@ -68,12 +69,12 @@ public abstract class ServiceEvenement {
 	 * @return
 	 */
 	@WebMethod
-	public boolean modifyEvent(Evenement newEvent, int idEventAModifier, String nomFichierXml)
+	public boolean modifyEvent(Evenement newEvent, int idEventAModifier)
 	{
 		
-		Evenements events = getAllEvents(nomFichierXml);
-		deleteEvent(idEventAModifier, nomFichierXml);
-		addUnEvent(newEvent, nomFichierXml);
+		Evenements events = getAllEvents();
+		deleteEvent(idEventAModifier);
+		addUnEvent(newEvent);
 		return true;
 	}
 
@@ -83,7 +84,7 @@ public abstract class ServiceEvenement {
 	 * @return
 	 */
 	@WebMethod
-	public static Evenements getAllEvents(String nomFichierXml)
+	public static Evenements getAllEvents()
 	{
 		EvenementJaxb ejb = new EvenementJaxb(nomFichierXml);
 		Evenements listAllEvents = new Evenements();
@@ -96,10 +97,17 @@ public abstract class ServiceEvenement {
 	 * @return
 	 */
 	@WebMethod
-	public static Evenement getEvent(int idEvent)
+	public static Evenement getEvent(Evenements events, int idEvent)
 	{
-		Evenement event = new Evenement();
-		return event ;
+		List<Evenement> event = events.getEvents();
+		event.get(0).getId();
+		for (int i = 0; i < event.size() ; i++) {
+			if (events.getEvents().get(i).getId() == idEvent) {
+				return events.getEvents().get(i);
+			}
+		}
+		
+		return null;
 	}
 
 }

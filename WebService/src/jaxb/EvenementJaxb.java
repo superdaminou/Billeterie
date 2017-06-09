@@ -9,7 +9,7 @@ import org.w3c.dom.Element;
 
 public class EvenementJaxb {
 
-	public String nomFichier;
+	public String nomFichier; // = "evenement.xml";
 
 	public EvenementJaxb(String nomFichier) {
 		super();
